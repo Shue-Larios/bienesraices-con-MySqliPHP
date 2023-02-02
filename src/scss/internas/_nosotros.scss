@@ -1,0 +1,18 @@
+.contenido-nosotros{
+    @include tablet {
+        @include grid(2, 2rem)
+// esto es lo mismo con qye tenga lo de arriba
+        // display: grid;
+        // grid-template-columns: 2fr 2fr; //crea dos columnas
+        // column-gap: 2rem; //separacion en las columnas
+    }
+}
+
+.texto-nosotros blockquote{
+
+font-weight: $black; // poner negrta la letra
+font-size: 2.2rem;
+margin: 3rem 0 0 0;
+padding-left: 1rem 0 3rem 0;
+    
+}

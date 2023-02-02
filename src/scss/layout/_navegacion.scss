@@ -1,0 +1,95 @@
+.derecha{
+    display: flex; // lo pone de izquierda a derecha
+    flex-direction: column; // lo pone en columnas
+align-items: center; // para que este centrado en celulares
+    @include tablet{
+        // en un dispositivo mediano lo empuja al lado derecho
+        align-items: flex-end;
+    }
+    .dark-mode-boton{
+        width: 3rem;
+        margin-top: 1rem; //espacio arriba d la imagen
+        margin-bottom: 1rem; //espacio abajo de la imagen
+        // es una propiedad de CSS que hace filtros como los de instragram
+        filter: invert(100%); //invierte el color que tenga aplicado de negro pasa a blanco
+       &:hover{
+           cursor: pointer;
+           filter: opacity(0.4) drop-shadow(0 0 0 blue); // le cambio el color a la imagen cuando acerco el cursor
+       } 
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+.barra{
+    display: flex;
+    flex-direction: column; // colocarlo de arriba para abajo
+    align-items: center; // centra el icono hamburguesa del menu
+    // padding-top: 3rem;
+    @include tablet{
+    flex-direction: row;
+    justify-content: space-between; // para poner uno en cada lado
+    align-items: flex-end; // alinea elicono de bienes raices en la parte de abajo
+}
+}
+.navegacion{
+          //esto funciona como un display: none;
+          visibility: hidden;
+          //funciona mejor junto al transition
+          opacity: 0;
+          height: 0; // ayuda a quitar el espacio 
+          // que haga una trancision de 3segundos como animacion y despues el tipo de animacion
+          transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+        
+          // display: none; // desaparece la navegacion en dispositivo pequeño
+          @include tablet{           
+              display: flex; // obliga a la navegacion que se mire 
+              align-items: center;
+              opacity: 1;
+              visibility: visible; 
+               height: 2rem; // ayuda a quitar el espacio 
+            
+          }
+   
+    a {
+        color: $blanco; //cambia color a la navegacion
+        text-decoration: none; // no tiene interlineado
+        font-size: 2.2rem;
+        display: block; // para que tome todo el ancho disponible
+        text-align: center; //texto centrado
+        @include tablet{
+            margin-right: 2rem;
+            font-size: 1.8rem; 
+            &:last-of-type{  // para quitar el margin de la ultima opcion de la navegacion
+                margin-right: 0;
+            }
+        }
+        &:hover { //cambio el color cuando paso el curos por .a
+            color: blue;
+        }
+    }
+}
+
+// menu hamburguesa del icono de menu responsive
+.mobile-menu{
+    @include tablet {
+        //esto funciona como un display: none;
+        // visibility: hidden; // para ocultar
+        // desaparece el menu hamburguesa en dispositivos grandes
+      display: none; 
+
+    }
+    img{
+        width: 5rem; // para que la imagen sea mas pequeña3
+    }
+}
+
+.mostrar{
+    // sirve para quitar una clase habia un problema cuando dejabamos la clase d mostrar agregada
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+}

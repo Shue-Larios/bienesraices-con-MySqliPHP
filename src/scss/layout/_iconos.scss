@@ -1,0 +1,64 @@
+// // parte del css hecha por mi empieza aca   
+
+// h3{
+//     text-transform: uppercase;
+// }
+
+// .sombra {
+//     // -webkit-box-shadow: 0px 5px 15px 6px rgb(82 81 82 / 78%);
+//     //-moz-box-shadow: 0px 5px 15px 6px rgba(82, 81, 82, 0.78);
+//     box-shadow: 0px 5px 15px 6px rgba(224, 171, 71, 0.842);
+//     background-color: $blanco;
+//     padding: 2rem;
+//     border-radius: 2rem;
+// }
+
+// .icono-nosotros {
+//     display: grid;
+//     grid-template-columns: 33.33% 33.33% 33.33%;
+//     column-gap: 1rem;
+// }
+
+// .icono{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+
+//  .iconos {
+//     height: 15rem;
+//     /* sacamos el cuadrado */
+//     width: 15rem;
+//      box-shadow: 0px 5px 15px 6px rgba(19, 12, 1, 0.842);
+//     border-radius: 50%;
+//     /*  para dar un circulo exacto */
+//     display: flex;
+//     /* habilitamos las opciones de flex */
+//     justify-content: space-evenly;
+//     /* nos hace una mejor vista de los dos iconos de apple y andorid */
+//     align-items: center;
+//     /*nos centra los iconos */
+// }
+
+// // fin de la parte hecha por mi del css
+
+
+@include tablet{
+.iconos-nosotros{
+  //3 columnas con una separacion de 2rem
+  @include grid(3,2rem) 
+    }
+}
+
+.icono{
+    text-align: center; // para que todo el contenido este centrado
+
+    img{
+        height: 10rem; //hacemos mas pequeños los iconos
+
+    }
+    h3{
+text-transform: uppercase; 
+    }
+}

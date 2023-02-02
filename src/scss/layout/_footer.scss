@@ -1,0 +1,18 @@
+.footer{
+    background-color: $grisOscuro;
+padding: $separacion / 20 0;
+margin-bottom: 0; // en dispositivos pequeños el footer tenia un espacio 
+    .contenedor-footer{
+        padding: $separacion / 2;
+    }
+
+    .navegacion{
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+    }
+    .copyright{
+        color: $blanco;
+        text-align: center;
+    }
+}

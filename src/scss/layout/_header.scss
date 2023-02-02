@@ -1,0 +1,56 @@
+// desde el padre que es HTMl hasta el header nombrado inicio
+// para el que no soporta webp
+.no-webp .inicio{
+    background-image: url(../img/header.jpg);
+}
+// para el que soporta webp
+.webp .inicio{
+    background-image: url(../img/header.webp);
+   
+   // para opacar una imagen 
+   // background: rgba(0, 0, 0, 0.7) url('../img/anuncio2.webp');
+    // height: 100%;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-blend-mode: darken;
+    // FIN OPACAR IMAGEN
+}
+
+
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+
+    &.inicio{
+        background-position: center center; // para que la imagen se centre de ambos lados
+        background-size: cover; // para que tome todo el espacio disponible la imagen
+        // background-repeat: no-repeat; 
+
+        @include tablet{
+            min-height: 60rem; // para hacerle un espacio a la imagen
+        }
+        
+
+        .contenido-header{
+            @include tablet{
+                min-height: 60rem; // para que el contenido tome el mismo espacio que la imagen 
+    }
+    
+}
+    }
+}
+
+.contenido-header{
+display: flex;
+flex-direction: column; // para hacer las dos en columnas
+justify-content: space-between; 
+
+   h1{
+    color: $blanco;
+    font-weight: $bold;
+    line-height: 2;
+    max-width: 60rem; //crea un maximo y obliga a 
+    text-align: left; // para alinear el contenido a la izquierda 
+   } 
+}

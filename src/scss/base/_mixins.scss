@@ -1,0 +1,41 @@
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+  // se usa como la parte de arriba grid(3,2rem) 
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+// $bgcolor para hacerlo mas inteligente y decirlo adelante que color usar
+// $display para decirle que espacio usar cuando lo use en _botones
+@mixin boton($bgcolor, $display) {
+    background-color: $bgcolor;
+    color: $blanco;
+    font-weight: $bold; // negrita
+    text-decoration: none; // para quitarle la linea de abajo
+    padding: 1rem 3rem;
+    text-align: center;
+    margin-top: $separacion /2;
+    display: $display;
+border: none; // quitar el borde al boton del formulario
+    &:hover {
+        background-color: darken($bgcolor, 5);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,49 @@
+@include tablet{
+    .seccion-inferior{
+        display: grid;
+        grid-template-columns: 2fr 1fr; //crea dos columnas
+        column-gap: 2rem; //separacion en las columnas
+    }
+}
+
+.entrada-blog{
+    margin-bottom: 2rem; // separacion de cada una de las entradas
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+column-gap: 2rem; //espacio entre columas
+    }
+    &:last-of-type{
+        margin-bottom: 0; // quitamos el magin a la ultima
+    }
+
+}
+
+.texto-entrada{
+    a{
+color:$negro; // color a los a
+margin-top: 2rem;
+display: block; // se le agrega esto xk sino no se mira ya que los a son display:inline por default
+@include tablet{
+margin-top: 0rem; // xk en dispositivo grande tambien me agarraba el margin-top: 2rem
+
+}
+    }
+    h4{
+margin: 0; // elimina el espacio y se mira mas pegado todo
+line-height: 1.4; //interlineado 
+&::after{ // todo esto para agregar la linea abajo del h4
+    content: ''; //siempre va hacer asi
+    display: block; //xk sino no se mira
+    width: 15rem; //lo largo de la linea
+    height: .3rem; // el grosor de la linea
+    background-color: $verde; // el color de la linea
+    margin-top: 1rem; //espacio entre h4 y la linea verde
+
+}
+    }
+  
+}
+span{
+    color: $amarillo; // para el color del span
+}

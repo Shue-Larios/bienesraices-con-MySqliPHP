@@ -1,0 +1,42 @@
+@include tablet{
+    .contenedor-anuncio{
+           @include grid(3,2rem) 
+    }
+}
+
+.anuncio{
+    // lighten ayuda aclarar, darken oscurece
+    background-color: lighten($color: $gris, $amount: 5);
+    border: 1.5px solid $grisOscuro; // aca le ponemos color al borde
+margin-bottom: 2rem;
+    .contenido-anuncio{
+        padding: 2rem;
+    }
+    h3,p{
+        margin: 0;
+    }
+
+}
+// el precio lo ponemos afuera para que afecte las que se usa en otras paginas q no tengan clase padre
+.precio{
+    color: $verde;
+    font-weight: $bold;  //oscurece el precio 
+    font-size: 3rem; // mas grande el precio
+}
+.icono-caracteristicas{
+    display: flex;
+    list-style: none; // quita las viñetas a la lista
+    padding: 0; // la lista las agregan solas aca se lo quito
+    li{
+        flex: 1; // hace que los iconos tomen todo el espacio
+        display: flex;
+        img{
+            flex: 0 0 3rem; // le ponemos 3 para que sea mas pequeño los iconos
+        margin-right: 1rem;
+        }
+        p {
+           font-weight:$black; // color hay que definilo como en las variables
+        }
+    }
+  
+}
